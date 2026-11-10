@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b35">
+  <meta name="description" content="Practice your university exit exam with timed multiple-choice quizzes.">
+  <title>Boni Exit Exam | Practice Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Boni Exit Exam home">
+        <span class="brand-mark">B</span>
+        <span><strong>BONI</strong><small>EXIT EXAM PORTAL</small></span>
+      </a>
+      <span class="header-tag">PRACTICE • PREPARE • SUCCEED</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR EXAM PREPARATION STARTS HERE</span>
+        <h1>Learn today.<br><span>Lead tomorrow.</span></h1>
+        <p>Choose a course, challenge your knowledge, and track your progress with a timed practice quiz.</p>
+        <div class="hero-points"><span>✓ Timed practice</span><span>✓ Instant results</span><span>✓ Answer review</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+        <div class="art-card"><span class="art-check">✓</span><strong>EXAM READY</strong><small>One question at a time</small></div>
+        <span class="art-star star-one">✦</span><span class="art-star star-two">✧</span>
+      </div>
+    </section>
+
+    <section id="home" class="section">
+      <div class="section-heading">
+        <div><span class="eyebrow">SELECT A SUBJECT</span><h2>Choose your course</h2></div>
+        <p class="section-note">Pick a course below to begin your practice test.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course-card">
+          <div class="course-icon ethics-icon">✦</div><span class="course-label">COURSE 01</span>
+          <h3>Business Ethics</h3><p>Build your understanding of ethical decisions, responsibility, and stakeholders in business.</p>
+          <div class="course-meta"><strong id="businessCount">100</strong><span>Multiple-choice questions</span></div>
+          <button class="primary-btn start-btn" data-course="business">Start Business Ethics <span>→</span></button>
+        </article>
+        <article class="course-card">
+          <div class="course-icon risk-icon">◈</div><span class="course-label">COURSE 02</span>
+          <h3>Risk Management<br>&amp; Insurance</h3><p>Practice key concepts of risk, insurance principles, and managing uncertainty.</p>
+          <div class="course-meta"><strong id="riskCount">120</strong><span>Multiple-choice questions</span></div>
+          <button class="primary-btn start-btn" data-course="risk">Start Risk Management <span>→</span></button>
+        </article>
+        <article class="course-card course-pending">
+          <div class="course-icon management-icon">▦</div><span class="course-label">COURSE 03</span>
+          <h3>Introduction to<br>Management</h3><p>This course will be activated when its question bank is added.</p>
+          <div class="course-meta"><strong>Coming soon</strong><span>Question bank required</span></div>
+          <button class="secondary-btn" disabled>Questions not added yet</button>
+        </article>
+      </div>
+      <p class="data-note"><span>ⓘ</span> Introduction to Management is listed, but its questions were not included in the ZIP you sent.</p>
+    </section>
+
+    <section id="quiz" class="section hidden" aria-live="polite">
+      <div class="quiz-heading">
+        <button id="backHome" class="text-btn">← All courses</button>
+        <div><span class="eyebrow">PRACTICE SESSION</span><h2 id="courseTitle">Course</h2></div>
+        <div class="timer-wrap"><span class="timer-label">TIME LEFT</span><strong id="timer">00:00</strong></div>
+      </div>
+      <div class="quiz-layout">
+        <aside class="question-sidebar">
+          <div class="sidebar-top"><strong>Questions</strong><span id="answeredCount">0 answered</span></div>
+          <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+          <div class="nav-legend"><span><i class="legend-answered"></i>Answered</span><span><i class="legend-current"></i>Current</span><span><i class="legend-empty"></i>Unanswered</span></div>
+          <div id="navGrid" class="nav-grid" aria-label="Jump to question"></div>
+        </aside>
+        <section class="question-card">
+          <div class="question-top"><span class="question-chip" id="counter">QUESTION 1</span><span class="question-total" id="totalQuestions">OF 100</span></div>
+          <h3 id="question">Question text</h3>
+          <div id="options" class="options-list"></div>
+          <div class="quiz-actions"><button id="prevBtn" class="secondary-btn">← Previous</button><button id="submitBtn" class="submit-btn">Submit quiz</button><button id="nextBtn" class="primary-btn">Next →</button></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="result" class="section hidden" aria-live="polite">
+      <div class="result-card">
+        <div class="result-icon">✓</div><span class="eyebrow">PRACTICE SESSION COMPLETED</span>
+        <h2>Your quiz result</h2><div id="score" class="score">0 / 0</div><p id="message" class="result-message"></p>
+        <div class="result-stats"><div><strong id="correctStat">0</strong><span>Correct</span></div><div><strong id="wrongStat">0</strong><span>Incorrect / blank</span></div><div><strong id="percentStat">0%</strong><span>Score</span></div></div>
+        <div class="result-actions"><button id="reviewBtn" class="primary-btn">Review answers</button><button id="anotherBtn" class="secondary-btn">Choose another course</button></div>
+      </div>
+      <div id="review" class="review-list hidden"></div>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> Boni Exit Exam</span><span>Keep learning. Keep improving.</span></footer>
+  <script src="data/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
